@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kontak - SMPN 1 Siman</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="logo">
+          <h1>SMPN 1 Siman</h1>
+        </div>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="profil.html">Profil</a></li>
+            <li><a href="akademik.html">Akademik</a></li>
+            <li><a href="kontak.html">Kontak</a></li>
+          </ul>
+          <div class="hamburger">&#9776;</div>
+        </nav>
+      </div>
+    </header>
+
+    <section class="section">
+      <div style="text-align: center">
+        <h2 class="section-title">Hubungi Kami</h2>
+      </div>
+
+      <div
+        class="container"
+        style="
+          display: flex;
+          flex-wrap: wrap;
+          gap: 30px;
+          justify-content: center;
+        "
+      >
+        <div style="flex: 1; min-width: 300px">
+          <h3>📍 Lokasi Sekolah</h3>
+          <p>
+            Jl. Halim Perdana Kusuma, Siman, Kec. Siman, Kab. Ponorogo, Jawa
+            Timur.
+          </p>
+          <br />
+          <h3>📞 Kontak Resmi</h3>
+          <p>Telepon: 082114537452</p>
+          <p>Email: tsaqifcakrawibowo@gmail.com</p>
+          <br />
+          <p><em>Jam Operasional: Senin - Jumat (07.00 - 15.00 WIB)</em></p>
+        </div>
+
+        <div
+          style="
+            flex: 1;
+            min-width: 300px;
+            background: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+          "
+        >
+          <h3 style="margin-bottom: 15px; color: #003366">Kirim Pesan</h3>
+
+          <form onsubmit="kirimKeWA(event)">
+            <div style="margin-bottom: 15px">
+              <label for="nama" style="font-weight: bold">Nama Lengkap</label>
+              <input
+                type="text"
+                id="nama"
+                placeholder="Tulis nama Anda..."
+                style="
+                  width: 100%;
+                  padding: 10px;
+                  margin-top: 5px;
+                  border: 1px solid #ccc;
+                  border-radius: 5px;
+                "
+                required
+              />
+            </div>
+
+            <div style="margin-bottom: 15px">
+              <label for="email" style="font-weight: bold"
+                >Email (Opsional)</label
+              >
+              <input
+                type="email"
+                id="email"
+                placeholder="contoh@email.com"
+                style="
+                  width: 100%;
+                  padding: 10px;
+                  margin-top: 5px;
+                  border: 1px solid #ccc;
+                  border-radius: 5px;
+                "
+              />
+            </div>
+
+            <div style="margin-bottom: 15px">
+              <label for="pesan" style="font-weight: bold">Isi Pesan</label>
+              <textarea
+                id="pesan"
+                rows="4"
+                placeholder="Tulis keperluan atau pertanyaan Anda..."
+                style="
+                  width: 100%;
+                  padding: 10px;
+                  margin-top: 5px;
+                  border: 1px solid #ccc;
+                  border-radius: 5px;
+                "
+                required
+              ></textarea>
+            </div>
+
+            <button
+              type="submit"
+              class="btn"
+              style="
+                width: 100%;
+                border: none;
+                cursor: pointer;
+                font-weight: bold;
+                font-size: 16px;
+              "
+            >
+              Kirim Sekarang 🚀
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 SMP Negeri 1 Siman Ponorogo.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+
+    <script>
+      function kirimKeWA(event) {
+          // Mencegah halaman refresh saat tombol ditekan
+          event.preventDefault();
+
+          // 1. Mengambil data yang diketik user
+          var nama = document.getElementById("nama").value;
+          var email = document.getElementById("email").value;
+          var pesan = document.getElementById("pesan").value;
+
+          // 2. Nomor Admin (Format 62 pengganti 0)
+          var nomorHP = "6282114537452";
+
+          // 3. Menyusun pesan (Gunakan %0A untuk Enter/Baris baru)
+          var teksPesan = "Halo Admin SMPN 1 Siman,%0A%0A" +
+                          "Perkenalkan, saya: *" + nama + "*%0A" +
+                          "Email: " + email + "%0A%0A" +
+
+
+          // 4. Membuat Link WhatsApp
+          var link = "https://wa.me/" + nomorHP + "?text=" + teksPesan;
+
+          // 5. Membuka link di tab baru
+          window.open(link, '_blank');
+      }
+    </script>
+  </body>
+</html>

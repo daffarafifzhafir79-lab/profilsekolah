@@ -1,0 +1,186 @@
+/* File: css/style.css */
+
+:root {
+  --primary-color: #1f4fd8; /* Biru utama */
+  --secondary-color: #4a90e2; /* Biru terang */
+  --accent-color: #f1c40f; /* Kuning aksen */
+  --text-color: #333;
+  --bg-light: #f0f2f5; /* Abu-abu muda (warna dasar web) */
+  --white: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--bg-light);
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+ul {
+  list-style: none;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* HEADER */
+header {
+  background: var(--primary-color);
+  color: var(--white);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+.nav-links a {
+  color: var(--white);
+  font-weight: 500;
+  transition: 0.3s;
+}
+.nav-links a:hover {
+  color: var(--accent-color);
+} /* Efek Hover Kuning */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+/* HERO */
+.hero {
+  background: linear-gradient(rgba(0, 51, 102, 0.8), rgba(0, 51, 102, 0.8)),
+    url("https://placehold.co/1200x600?text=SMPN+1+Siman+Ponorogo");
+  background-size: cover;
+  background-position: center;
+  color: var(--white);
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+.hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+.btn {
+  display: inline-block;
+  background: var(--secondary-color);
+  color: var(--white);
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-top: 20px;
+  transition: 0.3s;
+}
+.btn:hover {
+  background: var(--primary-color);
+  border: 1px solid white;
+}
+
+/* SECTIONS & CARDS */
+.section {
+  padding: 40px 20px;
+}
+.section-title {
+  text-align: center;
+  margin-bottom: 30px;
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--accent-color);
+  display: inline-block;
+  padding-bottom: 5px;
+}
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.card {
+  background: var(--white);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+.card img {
+  border-radius: 5px;
+  margin-bottom: 15px;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* FOOTER */
+footer {
+  background: var(--primary-color);
+  color: var(--white);
+  text-align: center;
+  padding: 20px;
+  margin-top: auto;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: var(--primary-color);
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+  }
+  .nav-links.active {
+    display: flex;
+  }
+  .hamburger {
+    display: block;
+  }
+}
+.hero {
+  height: 100vh; /* tinggi 1 layar penuh */
+  background-image: url("/reogutama'.jpg"); /* path gambar */
+  background-size: cover; /* gambar menutup area */
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  color: white;
+  padding: 20px;
+}
